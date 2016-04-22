@@ -12,7 +12,7 @@ gulp.task('deploy', function() {
     log: gutil.log
   });
 
-  gulp.src(['app.js', 'package.json'])
+  gulp.src(['app.js', 'package.json', 'bower.json'])
     .pipe(conn.newer('/home/stephen'))
     .pipe(conn.dest('/home/stephen'));
 
