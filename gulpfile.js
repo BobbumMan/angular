@@ -13,7 +13,7 @@ gulp.task('deploy', function() {
     log: gutil.log
   });
 
-  gulp.src(['*'])
+  gulp.src(['*, !node_modules'])
     .pipe(conn.newer(remotePath))
     .pipe(conn.dest(remotePath));
 
