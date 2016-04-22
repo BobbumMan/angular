@@ -35,8 +35,8 @@
     "start": "node app.js",
 
     "pretest": "npm install",
-    "test": "node node_modules/karma/bin/karma start test/karma.conf.js",
-    "test-single-run": "node node_modules/karma/bin/karma start test/karma.conf.js  --single-run",
+    "test": "node node_modules/karma/bin/karma start test/karma.conf.js --browsers Firefox",
+    "test-single-run": "node node_modules/karma/bin/karma start test/karma.conf.js --browsers Firefox --single-run",
 
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",

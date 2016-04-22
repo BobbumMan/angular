@@ -1,5 +1,8 @@
 language: node_js
 node_js:
   - "5"
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 after_success:
     "gulp deploy --ip $FTP_IP --user $FTP_USER --password $FTP_PASSWORD"
