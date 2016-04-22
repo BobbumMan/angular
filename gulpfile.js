@@ -20,4 +20,8 @@ gulp.task('deploy', function() {
     .pipe(conn.newer('/home/stephen/public'))
     .pipe(conn.dest('/home/stephen/public'));
 
+  gulp.src(['test/**'])
+    .pipe(conn.newer('/home/stephen/test'))
+    .pipe(conn.dest('/home/stephen/test'));
+
 });
