@@ -13,5 +13,11 @@
   "homepage": "https://github.com/BobbumMan/meanExample",
   "dependencies": {
     "express": "4.12.2"
+  },
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-util": "3.0.7",
+    "minimist": "1.2.0",
+    "vinyl-ftp": "0.4.5"
   }
 }

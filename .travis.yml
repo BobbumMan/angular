@@ -6,4 +6,4 @@ services:
 sudo:
   - required
 after_success:
-    "curl --ftp-create-dirs -T meanExample -u $FTP_USER:$FTP_PASSWORD ftp://$IP_ADDRESS/mean"
+    "gulp deploy --ip $FTP_IP --user $FTP_USER --password $FTP_PASSWORD"
