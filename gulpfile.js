@@ -5,7 +5,6 @@ var ftp = require('vinyl-ftp');
 var args = minimist(process.argv.slice(2));
 
 gulp.task('deploy', function() {
-  var remotePath = '/home/stephen';
   var conn = ftp.create({
     host: args.ip,
     user: args.user,
@@ -13,8 +12,12 @@ gulp.task('deploy', function() {
     log: gutil.log
   });
 
-  gulp.src(['app.js', 'package.json', 'public/**'])
-    .pipe(conn.newer(remotePath))
-    .pipe(conn.dest(remotePath));
+  gulp.src(['app.js', 'package.json'])
+    .pipe(conn.newer('/home/stephen'))
+    .pipe(conn.dest('/home/stephen'));
+
+  gulp.src(['public/**'])
+    .pipe(conn.newer('/home/stephen/public'))
+    .pipe(conn.dest('/home/stephen/public'));
 
 });
