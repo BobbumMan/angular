@@ -5,7 +5,7 @@ var ftp = require('vinyl-ftp');
 var args = minimist(process.argv.slice(2));
 
 gulp.task('deploy', function() {
-  var remotePath = '/';
+  var remotePath = '/home/stephen';
   var conn = ftp.create({
     host: args.ip,
     user: args.user,
