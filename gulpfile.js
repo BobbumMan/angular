@@ -13,7 +13,7 @@ gulp.task('deploy', function() {
     log: gutil.log
   });
 
-  gulp.src(['*.js, *.json'])
+  gulp.src(['app.js, package.json, public/**'])
     .pipe(conn.newer(remotePath))
     .pipe(conn.dest(remotePath));
 
