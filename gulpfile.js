@@ -1,3 +1,4 @@
+var gulp = require('gulp');
 var minimist = require('minimist');
 var gutil = require('gulp-util');
 var ftp = require('vinyl-ftp');
@@ -15,5 +16,5 @@ gulp.task('deploy', function() {
   gulp.src(['*'])
     .pipe(conn.newer(remotePath))
     .pipe(conn.dest(remotePath));
-    
+
 });
