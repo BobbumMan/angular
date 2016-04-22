@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "5"
+services:
+  - mongodb
+sudo:
+  - required
+after_success:
+    "curl --ftp-create-dirs -T meanExample -u $FTP_USER:$FTP_PASSWORD ftp://$IP_ADDRESS/mean"

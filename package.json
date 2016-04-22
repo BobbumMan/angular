@@ -1,0 +1,17 @@
+{
+  "name": "meanExample",
+  "version": "0.1.1",
+  "description": "Testing gulp, travis, jasmine, etc.",
+  "author": "Stakked, LLC <info@stakked.io>",
+  "bugs": {
+    "url": "https://github.com/BobbumMan/meanExample/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BobbumMan/meanExample"
+  },
+  "homepage": "https://github.com/BobbumMan/meanExample",
+  "dependencies": {
+    "express": "4.12.2"
+  }
+}
