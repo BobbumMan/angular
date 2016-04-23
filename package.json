@@ -36,8 +36,8 @@
 
     "test": "node node_modules/karma/bin/karma start test/karma.conf.js --single-run",
     "test-single-run": "node node_modules/karma/bin/karma start test/karma.conf.js --single-run",
+    "posttest": "npm run protractor"
 
-    "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
 
     "preprotractor": "npm run update-webdriver",
