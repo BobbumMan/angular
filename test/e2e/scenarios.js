@@ -3,7 +3,7 @@ describe('PhoneCat App', function() {
   describe('Phone list view', function() {
 
     beforeEach(function() {
-      browser.get('app/index.html');
+      browser.get('');
     });
 
     it('should filter the phone list as a user types into the search box', function() {
@@ -18,7 +18,7 @@ describe('PhoneCat App', function() {
       query.clear();
       query.sendKeys('motorola');
       expect(phoneList.count()).toBe(2);
-      
+
     });
   });
 });
