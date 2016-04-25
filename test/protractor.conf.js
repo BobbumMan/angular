@@ -3,7 +3,7 @@ exports.config = {
   specs: ['e2e/*.js'],
   capabilities: {'browserName' :'firefox'},
   chromeOnly: true,
-  baseUrl: 'http://localhost:444/wd/hub/',
+  baseUrl: 'http://localhost:4444/wd/hub/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
