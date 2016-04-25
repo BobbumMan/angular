@@ -10,4 +10,5 @@ phonecatApp.controller('PhoneListCtrl', ['$scope', function($scope) {
     {name: 'Motorola XOOM™ with Wi-Fi', snippet: 'The Next, Next Generation tablet.'},
     {name: 'Motorola XOOM™', snippet: 'The Next, Next Generation tablet.'}
   ]
+  $scope.orderProp = "age";
 }])
