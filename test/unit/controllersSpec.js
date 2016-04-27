@@ -32,6 +32,8 @@ describe('PhoneCat controllers', function() {
 
     var scope, ctrl, $httpBackend;
 
+    beforeEach(module('phonecatApp'));
+
     beforeEach(inject(function(_$httpBackend_, $rootScope, $routeParams, $controller) {
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('phones/xyz.json').respond({name: 'phone xyz'});
