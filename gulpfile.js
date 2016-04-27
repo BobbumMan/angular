@@ -16,7 +16,7 @@ gulp.task('deploy', function() {
     .pipe(conn.newer('/home/stephen'))
     .pipe(conn.dest('/home/stephen'));
 
-  gulp.src(['public/**', '!public/bower_components'])
+  gulp.src(['public/**', '!public/bower_components/**'])
     .pipe(conn.newer('/home/stephen/public'))
     .pipe(conn.dest('/home/stephen/public'));
 
