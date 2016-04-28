@@ -12,7 +12,7 @@ gulp.task('deploy', function() {
     log: gutil.log
   });
 
-  gulp.src(['package.json', 'bower.json', '.bowerrc', 'tsconfig.json', 'typings.json'])
+  gulp.src(['package.json', 'bower.json', '.bowerrc', 'tsconfig.json', 'typings.json', 'index.html'])
     .pipe(conn.newer('/home/stephen'))
     .pipe(conn.dest('/home/stephen'));
 
@@ -20,7 +20,7 @@ gulp.task('deploy', function() {
   //   .pipe(conn.newer('/home/stephen/public'))
   //   .pipe(conn.dest('/home/stephen/public'));
 
-  gulp.src(['public/**'])
-    .pipe(conn.newer('/home/stephen/public'))
-    .pipe(conn.dest('/home/stephen/public'));
+  gulp.src(['app/**'])
+    .pipe(conn.newer('/home/stephen/app'))
+    .pipe(conn.dest('/home/stephen/app'));
 });
