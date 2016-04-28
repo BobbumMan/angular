@@ -1,5 +1,8 @@
 describe('PhoneCat controllers', function() {
 
+  beforeEach(module('phonecatApp'));
+  beforeEach(module('phonecatServices'));
+
   beforeEach(function() {
     jasmine.addMatchers({
       toEqualData: function(expected) {
@@ -7,9 +10,6 @@ describe('PhoneCat controllers', function() {
       }
     });
   });
-
-  beforeEach(module('phonecatApp'));
-  beforeEach(module('phonecatServices'));
 
   describe('PhoneListCtrl', function() {
 
