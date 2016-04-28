@@ -2,6 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {Hero} from './hero';
 import {HeroService} from './hero.service';
 import {Router} from 'angular2/router'
+import {HeroDetailComponent} from './hero-detail.component';
 
 @Component({
   selector: 'my-heroes',
