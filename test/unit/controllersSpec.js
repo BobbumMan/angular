@@ -28,7 +28,7 @@ describe('PhoneCat controllers', function() {
     it('should create "phones" model with 2 phones fetched from xhr', function() {
       expect(scope.phones).toEqualData([]);
       $httpBackend.flush();
-      expect(scope.phones).toEqual([{name: 'Nexus S'}, {name: "Motorola DROID"}]);
+      expect(scope.phones).toEqualData([{name: 'Nexus S'}, {name: "Motorola DROID"}]);
     })
 
     it('should set default value of orderProp model', function() {
@@ -58,7 +58,7 @@ describe('PhoneCat controllers', function() {
     it('should fetch phone detail', function() {
       expect(scope.phone).toEqualData([]);
       $httpBackend.flush();
-      expect(scope.phone).toEqual(xyzPhoneData());
+      expect(scope.phone).toEqualData(xyzPhoneData());
     })
 
   });
