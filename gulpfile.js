@@ -12,7 +12,7 @@ gulp.task('deploy', function() {
     log: gutil.log
   });
 
-  gulp.src(['package.json', 'bower.json', '.bowerrc', 'tsconfig.json', 'typings.json', 'index.html'])
+  gulp.src(['package.json', 'app.js', 'bower.json', '.bowerrc', 'tsconfig.json', 'typings.json', 'index.html'])
     .pipe(conn.newer('/home/stephen'))
     .pipe(conn.dest('/home/stephen'));
 
