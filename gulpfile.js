@@ -20,8 +20,7 @@ gulp.task('deploy', function() {
   //   .pipe(conn.newer('/home/stephen/public'))
   //   .pipe(conn.dest('/home/stephen/public'));
 
-  gulp.src(['app/**'])
-    .pipe(conn.newer('/home/stephen/app'))
-    .pipe(conn.dest('/home/stephen/app'));
-
+  gulp.src(['public/**'])
+    .pipe(conn.newer('/home/stephen/public'))
+    .pipe(conn.dest('/home/stephen/public'));
 });
