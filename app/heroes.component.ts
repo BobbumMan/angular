@@ -6,18 +6,8 @@ import {OnInit} from 'angular2/core';
 
 @Component({
   selector: 'my-heroes',
-  template: `
-    <h2>My Heroes</h2>
-    <ul class="heroes">
-      <li *ngFor="#hero of heroes"
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
-      </li>
-    </ul>
-
-    <my-hero-detail [hero]="selectedHero"></my-hero-detail>
-    `, styles:[`
+  templateUrl: 'app/heroes.component.html',
+  styles:[`
       .selected {
         background-color: #CFD8DC !important;
         color: white;
