@@ -12,16 +12,16 @@ gulp.task('deploy', function() {
     log: gutil.log
   });
 
-  gulp.src(['app.js', 'package.json', 'bower.json', '.bowerrc'])
+  gulp.src(['package.json', 'bower.json', '.bowerrc', 'tsconfig.json', 'typings.json'])
     .pipe(conn.newer('/home/stephen'))
     .pipe(conn.dest('/home/stephen'));
 
-  gulp.src(['public/**', '!public/bower_components/**'])
-    .pipe(conn.newer('/home/stephen/public'))
-    .pipe(conn.dest('/home/stephen/public'));
+  // gulp.src(['public/**', '!public/bower_components/**'])
+  //   .pipe(conn.newer('/home/stephen/public'))
+  //   .pipe(conn.dest('/home/stephen/public'));
 
-  gulp.src(['test/**'])
-    .pipe(conn.newer('/home/stephen/test'))
-    .pipe(conn.dest('/home/stephen/test'));
+  // gulp.src(['test/**'])
+  //   .pipe(conn.newer('/home/stephen/test'))
+  //   .pipe(conn.dest('/home/stephen/test'));
 
 });
