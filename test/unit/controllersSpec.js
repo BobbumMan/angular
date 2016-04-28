@@ -5,9 +5,13 @@ describe('PhoneCat controllers', function() {
 
   beforeEach(function() {
     jasmine.addMatchers({
-      toEqualData: function(expected) {
-        return angular.equals(this.actual, expected);
-      }
+      toEqualData: function(util, customEqualityTesters) {
+        return {
+          compare: function(actual, expected) {
+            result.pass = angular.equals(actual, expected);
+            return result
+          }
+        }
     });
   });
 
