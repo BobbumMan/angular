@@ -12,6 +12,7 @@ describe('PhoneCat controllers', function() {
             return result
           }
         }
+      }
     });
   });
 
