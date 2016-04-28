@@ -1,5 +1,13 @@
 describe('PhoneCat controllers', function() {
 
+  beforeEach(function() {
+    this.addMatchers({
+      toEqualData: function(expected) {
+        return angular.equals(this.actual, expected);
+      }
+    });
+  });
+
   beforeEach(module('phonecatApp'));
   beforeEach(module('phonecatServices'));
 
@@ -18,7 +26,7 @@ describe('PhoneCat controllers', function() {
     }));
 
     it('should create "phones" model with 2 phones fetched from xhr', function() {
-      expect(scope.phones.length).toBe(0);
+      expect(scope.phones).toEqualData([]);
       $httpBackend.flush();
       expect(scope.phones).toEqual([{name: 'Nexus S'}, {name: "Motorola DROID"}]);
     })
@@ -48,7 +56,7 @@ describe('PhoneCat controllers', function() {
     }));
 
     it('should fetch phone detail', function() {
-      expect(scope.phone.length).toBe(0);
+      expect(scope.phone).toEqualData([]);
       $httpBackend.flush();
       expect(scope.phone).toEqual(xyzPhoneData());
     })
