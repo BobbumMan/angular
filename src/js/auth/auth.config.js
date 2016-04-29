@@ -5,11 +5,13 @@ function AuthConfig($stateProvider, $httpProvider) {
     .state('app.login', {
       url: '/login',
       templateUrl: 'auth/auth.html',
+      controller: 'AuthCtrl as $ctrl',
       title: 'Sign in'
     })
     .state('app.register', {
       url: '/register',
       templateUrl: 'auth/auth.html',
+      controller: 'AuthCtrl as $ctrl',
       title: 'Sign up'
     });
 };
