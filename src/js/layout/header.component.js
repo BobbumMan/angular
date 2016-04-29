@@ -8,7 +8,7 @@ class AppHeaderCtrl {
 
 let AppHeader = {
   controller: AppHeaderCtrl,
-  templateUrl: 'layout/header.html'
+  templateUrl: 'layout/header.component.html'
 };
 
 export default AppHeader;
