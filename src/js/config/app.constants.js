@@ -1,5 +1,5 @@
 const AppConstants = {
-  api: 'http://localhost:3000/api',
+  api: 'http://104.236.78.212/api',
   jwtKey: 'jwtToken',
   appName: 'Conduit',
 };
