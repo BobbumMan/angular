@@ -3,6 +3,8 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var passport = require('passport');
 var User = mongoose.model('User');
+var jwt = require('express-jwt');
+var auth = jwt({secret: 'SECRET', userProperty: 'payload'});
 
 router.post('/users', function(req, res, next) {
   if (!req.body.username || !req.body.password || !req.body.email) {
@@ -37,6 +39,11 @@ router.post('/users/login', function(req, res, next) {
       return res.status(401).json(info);
     }
   })(req, res, next);
+});
+
+router.get('/user', auth, function(req, res, next) {
+  console.log(req.payload);
+  return res.json({user: req.payload});
 });
 
 module.exports = router;
