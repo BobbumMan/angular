@@ -13,4 +13,8 @@ var ArticleSchema = new mongoose.Schema({
   favorites: [String]
 });
 
+ArticleSchema.virtual('favoritesCount').get(function() {
+  return this.favorites.length;
+})
+
 mongoose.model('Article', ArticleSchema);
