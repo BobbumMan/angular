@@ -1,4 +1,4 @@
-export default class User {
+class User {
 
   constructor(JWT, AppConstants, $http, $state, $q) {
     'ngInject';
@@ -27,6 +27,19 @@ export default class User {
     this.current = null;
     this._JWT.destroy();
     this._$state.go(this._$state.$current, null, {reload: true});
+  }
+
+  update(fields) {
+    return this._$http({
+      url: this._AppConstants.api + '/user',
+      method: 'PUT',
+      data: fields,
+    }).then(
+      res => {
+        this.current = res.data.user;
+        return res.data.user;
+      }
+    )
   }
 
   verifyAuth() {
@@ -69,7 +82,9 @@ export default class User {
         deferred.resolve(true);
       }
     });
-    
+
     return deferred.promise;
   }
 }
+
+export default User;

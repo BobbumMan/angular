@@ -40,6 +40,12 @@ gulp.task('html', function() {
     .pipe(gulp.dest('./build/'));
 });
 
+gulp.task('css', function() {
+  return gulp.src('src/main.css')
+  .on('error', interceptErrors)
+  .pipe(gulp.dest('./build/'));
+})
+
 gulp.task('views', function() {
   return gulp.src(viewFiles)
     .pipe(templateCache({standalone: true}))
@@ -48,7 +54,7 @@ gulp.task('views', function() {
     .pipe(gulp.dest('./src/js/config'));
 });
 
-gulp.task('build', ['html', 'browserify'], function() {
+gulp.task('build', ['html', 'css', 'browserify'], function() {
   var html = gulp.src('build/index.html')
     .pipe(gulp.dest('./dist/'));
 
@@ -59,7 +65,7 @@ gulp.task('build', ['html', 'browserify'], function() {
   return merge(html, js);
 });
 
-gulp.task('default', ['html', 'browserify'], function() {
+gulp.task('default', ['html', 'css', 'browserify'], function() {
   // browserSync.init(['./build/**/**.**'], {
   //   server: './build',
   //   port: 80,
