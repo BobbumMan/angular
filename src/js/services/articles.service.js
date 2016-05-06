@@ -11,7 +11,7 @@ class Articles {
   save(article) {
     if (article._id) {
       return this._$http({
-        url: `${this._AppConstants.api}/articles/${article._id}`,
+        url: `${this._AppConstants.api}/article/${article._id}`,
         method: 'PUT',
         data: article
       }).then(res => {
@@ -35,7 +35,7 @@ class Articles {
       return deferred.promise;
     }
     this._$http({
-      url: `${this._AppConstants.api}/articles/${slug}`,
+      url: `${this._AppConstants.api}/article/${slug}`,
       method: 'GET'
     }).then(res => {
       deferred.resolve(res.data.article);
@@ -47,13 +47,43 @@ class Articles {
 
   destroy(slug) {
     return this._$http({
-      url: `${this._AppConstants.api}/articles/${slug}`,
+      url: `${this._AppConstants.api}/article/${slug}`,
       method: 'DELETE'
     }).then(res => {
       return res;
     }, err => {
       return err;
     })
+  }
+
+  favorite(slug) {
+    return this._$http({
+      url: `${this._AppConstants.api}/article/${slug}/favorite`,
+      method: 'POST'
+    }).then(res => {
+      return res;
+    }, err => {
+      return err;
+    })
+  }
+
+  unfavorite(slug) {
+    return this._$http({
+      url: `${this._AppConstants.api}/article/${slug}/favorite`,
+      method: 'DELETE'
+    }).then(res => {
+      return res;
+    }, err => {
+      return err;
+    })
+  }
+
+  query(config) {
+    return this._$http({
+      url: `${this._AppConstants.api}/articles${(config.type === 'feed') ? '/feed' : ''}`,
+      method: 'GET',
+      params: config.filters ? config.filters : null
+    }).then(res => res.data);
   }
 
 }

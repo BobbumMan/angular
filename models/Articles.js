@@ -10,7 +10,8 @@ var ArticleSchema = new mongoose.Schema({
   body: String,
   tagList: [String],
   createdAt: {type: Date, default: Date.now},
-  favorites: [String]
+  favorites: [String],
+  comments: [{ body: String, createdAt: {type: Date, default: Date.now}, author: {username: String, image: String}}]
 });
 
 ArticleSchema.virtual('favoritesCount').get(function() {

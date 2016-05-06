@@ -74,7 +74,7 @@ gulp.task('default', ['html', 'css', 'browserify'], function() {
   //     port: 4001
   //   }
   // });
-
+  gulp.watch('src/main.css', ['css']);
   gulp.watch('src/index.html', ['html']);
   gulp.watch(viewFiles, ['views']);
   gulp.watch(jsFiles, ['browserify']);

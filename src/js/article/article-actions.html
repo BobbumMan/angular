@@ -15,7 +15,7 @@
   <span ng-hide="$ctrl.canModify">
     <follow-btn user="$ctrl.article.author"></follow-btn>
     &nbsp;
-    <favorite-btn user="$ctrl.article">
+    <favorite-btn article="$ctrl.article">
       {{ $ctrl.article.favorited ? 'Unfavorite' : 'Favorite'}} Article <span class="counter">({{$ctrl.article.favoritesCount}})</span>
     </favorite-btn>
   </span>

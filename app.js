@@ -8,6 +8,7 @@ require('./config/passport');
 var users = require('./routes/users.js');
 var profiles = require('./routes/profiles.js');
 var articles = require('./routes/articles.js');
+var tags = require('./routes/tags.js');
 var bodyParser = require('body-parser');
 
 mongoose.connect('mongodb://localhost/conduit');
@@ -18,6 +19,7 @@ app.use(passport.initialize());
 app.use('/api', users);
 app.use('/api', profiles);
 app.use('/api', articles);
+app.use('/api', tags);
 
 app.use(express.static(__dirname + '/build'));
 
